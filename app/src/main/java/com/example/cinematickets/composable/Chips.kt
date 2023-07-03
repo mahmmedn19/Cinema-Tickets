@@ -45,7 +45,7 @@ fun TextChip(
                 color = if (isSelected) selectedColor else Color.LightGray,
                 shape = ShapeDefaults.Medium
             )
-            .padding(horizontal = 8.dp, vertical = 4.dp),
+            .padding(horizontal = 12.dp, vertical = 8.dp),
         verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.Center
     ) {

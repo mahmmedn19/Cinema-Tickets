@@ -14,6 +14,9 @@ import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.CardElevation
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -26,21 +29,15 @@ import androidx.compose.ui.unit.dp
 fun CustomBox(
     modifier: Modifier = Modifier,
     backgroundColor: Color = Color.White,
-    borderColor: Color = Color.Gray,
-    borderWidth: Dp = 1.dp,
     shape: Shape = CircleShape,
     content: @Composable () -> Unit
 ) {
-    Box(
+    Card(
         modifier = modifier
             .clip(shape)
             .background(color = backgroundColor)
-            .border(
-                width = borderWidth,
-                color = borderColor,
-                shape = shape
-            )
-            .padding(horizontal = 8.dp, vertical = 4.dp)
+            .padding(horizontal = 8.dp, vertical = 4.dp),
+        elevation = CardDefaults.cardElevation(2.dp)
     ) {
         content()
     }
