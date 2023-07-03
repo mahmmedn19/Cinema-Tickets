@@ -48,6 +48,7 @@ import com.example.cinematickets.composable.CustomBox
 import com.example.cinematickets.composable.CustomIcon
 import com.example.cinematickets.composable.HorizontalSpacer
 import com.example.cinematickets.composable.ResizableImage
+import com.example.cinematickets.composable.SuggestTag
 import com.example.cinematickets.composable.TextChip
 import com.example.cinematickets.composable.VerticalSpacer
 import kotlin.random.Random
@@ -144,30 +145,7 @@ fun HomeScreen() {
             fontSize = 20.sp
         )
         VerticalSpacer(height = 16.dp)
-        Row {
-            CustomBox(
-                backgroundColor = Color.White,
-                shape = CircleShape
-            ) {
-                Text(
-                    modifier = Modifier
-                        .padding(vertical = 4.dp, horizontal = 8.dp),
-                    text = "Fantasy",
-                )
-            }
-            HorizontalSpacer(width = 4.dp)
-            CustomBox(
-                shape = CircleShape
-            ) {
-                Text(
-                    modifier = Modifier
-                        .padding(vertical = 4.dp, horizontal = 8.dp),
-                    text = "Fantasy",
-                )
-            }
-        }
-
-
+        SuggestTag()
     }
 }
 
