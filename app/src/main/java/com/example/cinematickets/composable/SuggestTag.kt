@@ -11,33 +11,33 @@ package com.example.cinematickets.composable
 
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
+
 @Composable
-fun SuggestTag(){
+fun SuggestTag() {
     Row {
-        CustomBox(
-            backgroundColor = Color.White,
-            shape = CircleShape
+        MyCard(
+            elevation = 1,
         ) {
-            Text(
+            CustomText(
                 modifier = Modifier
-                    .padding(vertical = 4.dp, horizontal = 8.dp),
+                    .padding(8.dp),
                 text = "Fantasy",
+                fontSize = 16.sp,
             )
         }
-        HorizontalSpacer(width = 4.dp)
-        CustomBox(
-            shape = CircleShape
+        HorizontalSpacer(width = 16.dp)
+        MyCard(
+            elevation = 1,
         ) {
-            Text(
+            CustomText(
                 modifier = Modifier
-                    .padding(vertical = 4.dp, horizontal = 8.dp),
-                text = "Fantasy",
+                    .padding(8.dp),
+                text = "Adventure",
+                fontSize = 16.sp,
             )
         }
     }
