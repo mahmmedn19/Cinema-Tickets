@@ -28,6 +28,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -129,18 +130,18 @@ fun BookingScreen() {
                             horizontalAlignment = Alignment.CenterHorizontally
                         ) {
                             Row(verticalAlignment = Alignment.CenterVertically) {
-                                RatingText("6.8/")
-                                IMDbText("10")
+                                RatingText(stringResource(R.string.rating_number))
+                                IMDbText(stringResource(R.string.rating_fixed_nuber))
                             }
-                            IMDbText("IMDb")
+                            IMDbText(stringResource(R.string.imdb))
                         }
                         HorizontalSpacer(width = 32.dp)
                         Column(
                             verticalArrangement = Arrangement.Center,
                             horizontalAlignment = Alignment.CenterHorizontally
                         ) {
-                            RatingText("63%")
-                            IMDbText("Rotten Tomatoes")
+                            RatingText(stringResource(R.string.rating_value))
+                            IMDbText(stringResource(R.string.movie_name))
                         }
                         HorizontalSpacer(width = 32.dp)
                         Column(
@@ -150,16 +151,16 @@ fun BookingScreen() {
                             Row(
                                 verticalAlignment = Alignment.CenterVertically,
                             ) {
-                                RatingText("6/")
-                                IMDbText("10")
+                                RatingText(stringResource(R.string.rating_number))
+                                IMDbText(stringResource(R.string.rating_fixed_nuber))
                             }
-                            IMDbText("IGN")
+                            IMDbText(stringResource(R.string.ign))
                         }
                     }
                 }
                 VerticalSpacer(height = 16.dp)
                 CustomText(
-                    text = "Fantastic Fantastic : the  ghgf dfhfd Fantastic Fantastic ",
+                    text = stringResource(R.string.movie_details),
                     modifier = Modifier
                         .fillMaxWidth()
                         .padding(horizontal = 64.dp),
@@ -171,7 +172,7 @@ fun BookingScreen() {
                 MyListRounded(generateRandomImageUrls(15))
                 VerticalSpacer(height = 16.dp)
                 CustomText(
-                    text = "Fantastic Fantastic : the  ghgf dfhfd Fantastic Fantastic ",
+                    text = stringResource(R.string.movie_description),
                     modifier = Modifier
                         .fillMaxWidth()
                         .padding(horizontal = 32.dp),
