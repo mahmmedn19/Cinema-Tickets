@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Cinema Tickets</string>
+    <string name="rating_number">6.8/</string>
+    <string name="rating_fixed_nuber">10</string>
+    <string name="imdb">IMDb</string>
+    <string name="rating_value">63%</string>
+    <string name="movie_name">Rotten Tomatoes</string>
+    <string name="ign">IGN</string>
+    <string name="movie_details">"Fantastic Fantastic : the  movies Fantastic Fantastic Fantastic "</string>
+    <string name="movie_description">"Fantastic Fantastic : the  animation movies Fantastic Fantastic "</string>
 </resources>
