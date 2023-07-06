@@ -33,6 +33,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.constraintlayout.compose.ConstraintLayout
 import com.example.cinematickets.R
+import com.example.cinematickets.Utils.generateRandomImageUrls
 import com.example.cinematickets.composable.CustomIcon
 import com.example.cinematickets.composable.CustomText
 import com.example.cinematickets.composable.HorizontalSpacer
