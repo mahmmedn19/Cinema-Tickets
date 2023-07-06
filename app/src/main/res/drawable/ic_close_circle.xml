@@ -1,0 +1,28 @@
+<!--
+  ~ Created by Mohamed Naser on 7/6/23, 3:08 PM, 2023.
+  ~
+  ~ Copyright (c) 2023 All rights reserved.
+  ~
+  ~ Last modified: 7/6/23, 3:01 PM
+  ~
+  -->
+
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="22dp"
+    android:height="22dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+  <path
+      android:pathData="M12,12m-10,0a10,10 0,1 1,20 0a10,10 0,1 1,-20 0"
+      android:strokeAlpha="0.9"
+      android:strokeWidth="1.5"
+      android:fillColor="#00000000"
+      android:strokeColor="#FFFFFF"
+      android:fillAlpha="0.5"/>
+  <path
+      android:pathData="M14.5,9.5L9.5,14.5M9.5,9.5L14.5,14.5"
+      android:strokeWidth="1.5"
+      android:fillColor="#00000000"
+      android:strokeColor="#FFFFFF"
+      android:strokeLineCap="round"/>
+</vector>
