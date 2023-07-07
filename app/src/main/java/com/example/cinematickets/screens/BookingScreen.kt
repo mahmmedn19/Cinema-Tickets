@@ -123,41 +123,7 @@ fun BookingScreen() {
                     .fillMaxWidth(),
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
-                Box(modifier = Modifier.fillMaxWidth(), contentAlignment = Alignment.Center) {
-                    Row {
-                        Column(
-                            verticalArrangement = Arrangement.Center,
-                            horizontalAlignment = Alignment.CenterHorizontally
-                        ) {
-                            Row(verticalAlignment = Alignment.CenterVertically) {
-                                RatingText(stringResource(R.string.rating_number))
-                                IMDbText(stringResource(R.string.rating_fixed_nuber))
-                            }
-                            IMDbText(stringResource(R.string.imdb))
-                        }
-                        HorizontalSpacer(width = 32.dp)
-                        Column(
-                            verticalArrangement = Arrangement.Center,
-                            horizontalAlignment = Alignment.CenterHorizontally
-                        ) {
-                            RatingText(stringResource(R.string.rating_value))
-                            IMDbText(stringResource(R.string.movie_name))
-                        }
-                        HorizontalSpacer(width = 32.dp)
-                        Column(
-                            verticalArrangement = Arrangement.Center,
-                            horizontalAlignment = Alignment.CenterHorizontally
-                        ) {
-                            Row(
-                                verticalAlignment = Alignment.CenterVertically,
-                            ) {
-                                RatingText(stringResource(R.string.rating_number))
-                                IMDbText(stringResource(R.string.rating_fixed_nuber))
-                            }
-                            IMDbText(stringResource(R.string.ign))
-                        }
-                    }
-                }
+                RatingRow()
                 VerticalSpacer(height = 16.dp)
                 CustomText(
                     text = stringResource(R.string.movie_details),
@@ -197,4 +163,38 @@ fun BookingScreen() {
 @Composable
 fun PreviewScreenBook() {
     BookingScreen()
+}
+
+@Composable
+fun RatingRow() {
+    Box(modifier = Modifier.fillMaxWidth(), contentAlignment = Alignment.Center) {
+
+        Row {
+            RatingColumn(
+                stringResource(R.string.rating_number),
+                stringResource(R.string.rating_fixed_nuber)
+            )
+            HorizontalSpacer(width = 32.dp)
+            RatingColumn(stringResource(R.string.rating_value), stringResource(R.string.movie_name))
+            HorizontalSpacer(width = 32.dp)
+            RatingColumn(
+                stringResource(R.string.rating_number),
+                stringResource(R.string.rating_fixed_nuber)
+            )
+        }
+    }
+}
+@Composable
+fun RatingColumn(ratingNumber: String, fixedNumber: String) {
+    Column(
+        verticalArrangement = Arrangement.Center,
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+        Row(verticalAlignment = Alignment.CenterVertically) {
+            RatingText(ratingNumber)
+            IMDbText(fixedNumber)
+        }
+        IMDbText(stringResource(R.string.imdb))
+    }
+
 }
