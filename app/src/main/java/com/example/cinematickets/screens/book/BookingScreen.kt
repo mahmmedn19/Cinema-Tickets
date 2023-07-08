@@ -1,13 +1,13 @@
 /*
- * Created by Mohamed Naser on 7/2/23, 7:12 AM, 2023.
+ * Created by Mohamed Naser on 7/8/23, 11:27 AM, 2023.
  *
  * Copyright (c) 2023 All rights reserved.
  *
- * Last modified: 7/2/23, 7:12 AM
+ * Last modified: 7/8/23, 11:27 AM
  *
  */
 
-package com.example.cinematickets.screens
+package com.example.cinematickets.screens.book
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
@@ -170,20 +170,22 @@ fun RatingRow() {
         Row {
             RatingColumn(
                 stringResource(R.string.rating_number),
-                stringResource(R.string.rating_fixed_nuber)
+                stringResource(R.string.rating_fixed_nuber),
+                stringResource(R.string.imdb)
             )
             HorizontalSpacer(width = 32.dp)
-            RatingColumn(stringResource(R.string.rating_value), stringResource(R.string.movie_name))
+            RatingColumn(stringResource(R.string.rating_value),"",stringResource(R.string.movie_name))
             HorizontalSpacer(width = 32.dp)
             RatingColumn(
                 stringResource(R.string.rating_number),
-                stringResource(R.string.rating_fixed_nuber)
+                stringResource(R.string.rating_fixed_nuber),
+                stringResource(R.string.ign)
             )
         }
     }
 }
 @Composable
-fun RatingColumn(ratingNumber: String, fixedNumber: String) {
+fun RatingColumn(ratingNumber: String, fixedNumber: String,type:String) {
     Column(
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
@@ -192,7 +194,7 @@ fun RatingColumn(ratingNumber: String, fixedNumber: String) {
             RatingText(ratingNumber)
             IMDbText(fixedNumber)
         }
-        IMDbText(stringResource(R.string.imdb))
+        IMDbText(type)
     }
 
 }

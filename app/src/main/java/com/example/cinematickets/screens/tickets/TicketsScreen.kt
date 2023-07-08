@@ -1,13 +1,13 @@
 /*
- * Created by Mohamed Naser on 7/2/23, 7:12 AM, 2023.
+ * Created by Mohamed Naser on 7/8/23, 11:27 AM, 2023.
  *
  * Copyright (c) 2023 All rights reserved.
  *
- * Last modified: 7/2/23, 7:12 AM
+ * Last modified: 7/8/23, 11:27 AM
  *
  */
 
-package com.example.cinematickets.screens
+package com.example.cinematickets.screens.tickets
 
 
 import androidx.compose.foundation.background
