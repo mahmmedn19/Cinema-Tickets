@@ -27,7 +27,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -38,11 +37,13 @@ import com.example.cinematickets.R
 import com.example.cinematickets.composable.CustomIcon
 import com.example.cinematickets.composable.CustomText
 import com.example.cinematickets.composable.IconButton
-import com.example.cinematickets.composable.IconWithText
 import com.example.cinematickets.composable.ListOfDaysOfWeek
 import com.example.cinematickets.composable.ListOfTimes
 import com.example.cinematickets.composable.MyCard
+import com.example.cinematickets.composable.Seats
 import com.example.cinematickets.composable.VerticalSpacer
+import com.example.cinematickets.screens.tickets.composable.IconText
+import com.example.cinematickets.screens.tickets.composable.ImageHeader
 import com.example.cinematickets.ui.theme.White70
 
 @Composable
@@ -54,16 +55,14 @@ fun TicketsScreen(navController: NavHostController) {
     ) {
         val textWithIcon = createRef()
         val cardContainer = createRef()
+        val seats = createRef()
         val guideline = createGuidelineFromTop(450.dp)
 
-        Image(
-            modifier = Modifier
-                .fillMaxWidth()
-                .height(200.dp),
-            painter = painterResource(id = R.drawable.cinema),
-            contentDescription = null,
-
-        )
+        ImageHeader()
+        Seats(modifier =  Modifier.fillMaxWidth()
+            .padding(16.dp).constrainAs(seats){
+                bottom.linkTo(textWithIcon.top)
+            })
         MyCard(
             modifier = Modifier
                 .padding(top = 16.dp, start = 16.dp),
@@ -79,7 +78,7 @@ fun TicketsScreen(navController: NavHostController) {
         }
         Row(
             modifier = Modifier
-                .padding(vertical = 32.dp)
+                .padding(bottom = 32.dp)
                 .fillMaxWidth()
                 .constrainAs(textWithIcon) {
                     end.linkTo(parent.end)
@@ -88,26 +87,8 @@ fun TicketsScreen(navController: NavHostController) {
                 },
             horizontalArrangement = Arrangement.SpaceAround
         ) {
-            IconWithText(
-                drawableResId = R.drawable.rounded,
-                text = stringResource(R.string.available),
-                tint = Color.White,
-                iconSize = 14.dp
-            )
-            IconWithText(
-                drawableResId = R.drawable.rounded,
-                text = stringResource(R.string.taken),
-                tint = Color.Gray,
-                iconSize = 14.dp
-            )
-            IconWithText(
-                drawableResId = R.drawable.rounded,
-                text = stringResource(R.string.selected),
-                iconSize = 14.dp
-            )
+            IconText()
         }
-
-
         Card(
             modifier = Modifier
                 .fillMaxSize()
