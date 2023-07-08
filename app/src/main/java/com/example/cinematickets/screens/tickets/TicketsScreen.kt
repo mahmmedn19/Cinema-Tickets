@@ -24,11 +24,13 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.constraintlayout.compose.ConstraintLayout
+import androidx.navigation.NavHostController
 import com.example.cinematickets.R
 import com.example.cinematickets.composable.CustomIcon
 import com.example.cinematickets.composable.CustomText
@@ -41,7 +43,7 @@ import com.example.cinematickets.composable.VerticalSpacer
 import com.example.cinematickets.ui.theme.White70
 
 @Composable
-fun TicketsScreen() {
+fun TicketsScreen(navController: NavHostController, ) {
     ConstraintLayout(
         modifier = Modifier
             .fillMaxSize()
@@ -147,5 +149,5 @@ fun TicketsScreen() {
 @Preview(showSystemUi = true, showBackground = true)
 @Composable
 fun PreviewTicketsScreen() {
-    TicketsScreen()
+    TicketsScreen(NavHostController(LocalContext.current))
 }

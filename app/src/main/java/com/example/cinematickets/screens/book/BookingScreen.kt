@@ -10,7 +10,6 @@
 package com.example.cinematickets.screens.book
 
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -27,28 +26,29 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.constraintlayout.compose.ConstraintLayout
+import androidx.navigation.NavHostController
 import com.example.cinematickets.R
-import com.example.cinematickets.utils.Utils.generateRandomImageUrls
 import com.example.cinematickets.composable.CustomIcon
 import com.example.cinematickets.composable.CustomText
 import com.example.cinematickets.composable.HorizontalSpacer
-import com.example.cinematickets.composable.IMDbText
 import com.example.cinematickets.composable.IconButton
 import com.example.cinematickets.composable.MyCard
 import com.example.cinematickets.composable.MyListRounded
-import com.example.cinematickets.composable.RatingText
 import com.example.cinematickets.composable.SuggestTag
 import com.example.cinematickets.composable.VerticalSpacer
+import com.example.cinematickets.screens.book.composable.RatingRow
 import com.example.cinematickets.ui.theme.White70
+import com.example.cinematickets.utils.Utils.generateRandomImageUrls
 
 @Composable
-fun BookingScreen() {
+fun BookingScreen(navController: NavHostController) {
     ConstraintLayout(modifier = Modifier.fillMaxSize()) {
         val textWithIcon = createRef()
         val cardContainer = createRef()
@@ -160,41 +160,5 @@ fun BookingScreen() {
 @Preview(showSystemUi = true, showBackground = true)
 @Composable
 fun PreviewScreenBook() {
-    BookingScreen()
-}
-
-@Composable
-fun RatingRow() {
-    Box(modifier = Modifier.fillMaxWidth(), contentAlignment = Alignment.Center) {
-
-        Row {
-            RatingColumn(
-                stringResource(R.string.rating_number),
-                stringResource(R.string.rating_fixed_nuber),
-                stringResource(R.string.imdb)
-            )
-            HorizontalSpacer(width = 32.dp)
-            RatingColumn(stringResource(R.string.rating_value),"",stringResource(R.string.movie_name))
-            HorizontalSpacer(width = 32.dp)
-            RatingColumn(
-                stringResource(R.string.rating_number),
-                stringResource(R.string.rating_fixed_nuber),
-                stringResource(R.string.ign)
-            )
-        }
-    }
-}
-@Composable
-fun RatingColumn(ratingNumber: String, fixedNumber: String,type:String) {
-    Column(
-        verticalArrangement = Arrangement.Center,
-        horizontalAlignment = Alignment.CenterHorizontally
-    ) {
-        Row(verticalAlignment = Alignment.CenterVertically) {
-            RatingText(ratingNumber)
-            IMDbText(fixedNumber)
-        }
-        IMDbText(type)
-    }
-
+    BookingScreen(NavHostController(LocalContext.current))
 }
