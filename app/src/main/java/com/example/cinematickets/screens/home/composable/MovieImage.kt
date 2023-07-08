@@ -18,15 +18,16 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
+import coil.compose.rememberAsyncImagePainter
 
 @Composable
-fun MovieImage(imageResId: Int) {
+fun MovieImage(imageUrl: String) {
     val imageModifier = Modifier
         .fillMaxSize()
         .clip(RoundedCornerShape(16.dp))
 
     Image(
-        painter = painterResource(id = imageResId),
+        painter = rememberAsyncImagePainter(imageUrl),
         contentDescription = null,
         contentScale = ContentScale.Crop,
         modifier = imageModifier

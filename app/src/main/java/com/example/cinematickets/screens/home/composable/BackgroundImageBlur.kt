@@ -20,12 +20,12 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.blur
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
+import coil.compose.rememberAsyncImagePainter
 import com.example.cinematickets.composable.ResizableImage
 
 @Composable
-fun BackgroundImageBlur(images: List<Int>, currentPage: Int) {
+fun BackgroundImageBlur(images: List<String>, currentPage: Int) {
     Box(modifier = Modifier.fillMaxWidth()) {
         if (currentPage in images.indices) {
             ResizableImage(
@@ -33,7 +33,7 @@ fun BackgroundImageBlur(images: List<Int>, currentPage: Int) {
                     .fillMaxWidth()
                     .height(400.dp)
                     .blur(radius = 20.dp),
-                painter = painterResource(id = images[currentPage])
+                painter = rememberAsyncImagePainter(images[currentPage])
             )
         }
         Box(
@@ -46,7 +46,7 @@ fun BackgroundImageBlur(images: List<Int>, currentPage: Int) {
                             MaterialTheme.colorScheme.surface
                         ),
                         startY = 0f,
-                        endY = 1000f
+                        endY = 800f
                     )
                 )
         )

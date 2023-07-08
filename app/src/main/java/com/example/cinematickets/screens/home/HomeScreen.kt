@@ -31,7 +31,6 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.util.lerp
 import androidx.navigation.NavHostController
-import com.example.cinematickets.R
 import com.example.cinematickets.composable.SuggestTag
 import com.example.cinematickets.composable.VerticalSpacer
 import com.example.cinematickets.screens.book.navigateToBookingScreen
@@ -39,21 +38,16 @@ import com.example.cinematickets.screens.home.composable.BackgroundImageBlur
 import com.example.cinematickets.screens.home.composable.ChipSelected
 import com.example.cinematickets.screens.home.composable.MovieDetails
 import com.example.cinematickets.screens.home.composable.MovieImage
-import com.example.cinematickets.utils.Utils
+import com.example.cinematickets.utils.ListOfImages
 import kotlin.math.absoluteValue
 
 @ExperimentalMaterial3Api
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun HomeScreen(navController: NavHostController) {
-    val images = listOf(
-        R.drawable.movies_image,
-        R.drawable.zz,
-        R.drawable.movies_image,
-    )
-    val randomImageUrls = Utils.generateRandomImageUrls(10)
+    val images = ListOfImages.listOfImages()
     val selectedChipIndex = remember { mutableStateOf(0) }
-    val pagerState = rememberPagerState(images.size)
+    val pagerState = rememberPagerState(0)
     BackgroundImageBlur(images, pagerState.currentPage)
 
     Column(

@@ -46,6 +46,7 @@ import com.example.cinematickets.composable.VerticalSpacer
 import com.example.cinematickets.screens.book.composable.RatingRow
 import com.example.cinematickets.screens.tickets.navigateToTicketsScreen
 import com.example.cinematickets.ui.theme.White70
+import com.example.cinematickets.utils.ListOfImages
 import com.example.cinematickets.utils.Utils.generateRandomImageUrls
 
 @Composable
@@ -132,11 +133,11 @@ fun BookingScreen(navController: NavHostController) {
                     modifier = Modifier
                         .fillMaxWidth()
                         .padding(horizontal = 32.dp),
-                    fontSize = 18.sp,
+                    fontSize = 20.sp,
                 )
                 VerticalSpacer(height = 8.dp)
                 SuggestTag()
-                MyListRounded(generateRandomImageUrls(15))
+                MyListRounded(ListOfImages.listOfImages())
                 CustomText(
                     text = stringResource(R.string.movie_description),
                     modifier = Modifier
