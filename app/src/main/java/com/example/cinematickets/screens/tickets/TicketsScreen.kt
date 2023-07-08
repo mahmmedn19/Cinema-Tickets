@@ -51,7 +51,7 @@ fun TicketsScreen(navController: NavHostController, ) {
     ) {
         val textWithIcon = createRef()
         val cardContainer = createRef()
-        val guideline = createGuidelineFromTop(550.dp)
+        val guideline = createGuidelineFromTop(450.dp)
 
         MyCard(
             modifier = Modifier

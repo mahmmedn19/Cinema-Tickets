@@ -40,7 +40,7 @@ fun BottomNavigationBar(navController: NavHostController, bottomBarState: Mutabl
 
         items.forEach { screen ->
             val isSelected = currentDestination?.route == screen.route
-            val iconTint = if (isSelected) Orange else Color.Black
+            val iconTint = if (isSelected) White else Color.Black
 
             NavigationBarItem(
                 icon = {

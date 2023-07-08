@@ -56,11 +56,11 @@ fun ListOfTimes() {
                         ),
                         shape = CircleShape
                     )
-                    .padding(horizontal = 12.dp, vertical = 8.dp)
-                    .clickable { selectedTimeIndex = index },
+                    .clickable { selectedTimeIndex = index }
+                    .padding(horizontal = 12.dp, vertical = 8.dp),
             ) {
                 CustomText(
-                    text = time.time, fontSize = 12.sp,
+                    text = time.time, fontSize = 14.sp,
                     color = if (isSelected) Color.White else Color.Black
                 )
             }

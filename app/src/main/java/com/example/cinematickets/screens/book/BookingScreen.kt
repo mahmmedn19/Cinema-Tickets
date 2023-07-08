@@ -44,6 +44,7 @@ import com.example.cinematickets.composable.MyListRounded
 import com.example.cinematickets.composable.SuggestTag
 import com.example.cinematickets.composable.VerticalSpacer
 import com.example.cinematickets.screens.book.composable.RatingRow
+import com.example.cinematickets.screens.tickets.navigateToTicketsScreen
 import com.example.cinematickets.ui.theme.White70
 import com.example.cinematickets.utils.Utils.generateRandomImageUrls
 
@@ -52,6 +53,8 @@ fun BookingScreen(navController: NavHostController) {
     ConstraintLayout(modifier = Modifier.fillMaxSize()) {
         val textWithIcon = createRef()
         val cardContainer = createRef()
+        val guideline = createGuidelineFromTop(300.dp)
+
         Box(modifier = Modifier.fillMaxWidth()) {
             Image(
                 painter = painterResource(id = R.drawable.movies_image),
@@ -102,7 +105,6 @@ fun BookingScreen(navController: NavHostController) {
                 )
             }
         }
-        val guideline = createGuidelineFromTop(325.dp)
         Card(
             modifier = Modifier
                 .fillMaxSize()
@@ -117,7 +119,7 @@ fun BookingScreen(navController: NavHostController) {
             )
         )
         {
-            VerticalSpacer(height = 32.dp)
+            VerticalSpacer(height = 16.dp)
             Column(
                 modifier = Modifier
                     .fillMaxWidth(),
@@ -129,10 +131,10 @@ fun BookingScreen(navController: NavHostController) {
                     text = stringResource(R.string.movie_details),
                     modifier = Modifier
                         .fillMaxWidth()
-                        .padding(horizontal = 64.dp),
-                    fontSize = 20.sp,
+                        .padding(horizontal = 32.dp),
+                    fontSize = 18.sp,
                 )
-                VerticalSpacer(height = 16.dp)
+                VerticalSpacer(height = 8.dp)
                 SuggestTag()
                 MyListRounded(generateRandomImageUrls(15))
                 CustomText(
@@ -140,11 +142,11 @@ fun BookingScreen(navController: NavHostController) {
                     modifier = Modifier
                         .fillMaxWidth()
                         .padding(horizontal = 32.dp),
-                    fontSize = 18.sp,
+                    fontSize = 16.sp,
                 )
                 VerticalSpacer(height = 16.dp)
                 IconButton(
-                    onClick = { /* Handle button click */ },
+                    onClick = { navigateToTicketsScreen(navController) },
                     drawableResId = R.drawable.ic_booking,
                     text = "Booking",
                     textColor = Color.White,

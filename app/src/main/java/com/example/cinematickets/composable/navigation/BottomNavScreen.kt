@@ -14,6 +14,6 @@ import com.example.cinematickets.R
 sealed class BottomNavScreen(val route: String, val title: String, val icon: Int) {
     object Home : BottomNavScreen("home", "Home", R.drawable.ic_home_play)
     object Search : BottomNavScreen("search", "Search", R.drawable.ic_search)
-    object Tickets : BottomNavScreen("tickets", "Tickets", R.drawable.ic_booking)
-    object Profile : BottomNavScreen("profile", "Profile", R.drawable.ic_search)
+    object Tickets : BottomNavScreen("tickets", "Tickets", R.drawable.ic_ticket)
+    object Profile : BottomNavScreen("profile", "Profile", R.drawable.ic_user_rounded)
 }

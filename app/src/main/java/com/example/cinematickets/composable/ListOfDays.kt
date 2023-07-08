@@ -28,6 +28,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -54,13 +55,13 @@ fun ListOfDaysOfWeek() {
                     )
                     .border(border = BorderStroke(1.dp, color = if (isSelected) Color.Transparent else Brown),
                         shape = RoundedCornerShape(16.dp) )
-                    .padding(horizontal = 16.dp, vertical = 8.dp)
-                    .clickable { selectedDayIndex = index },
+                    .clickable { selectedDayIndex = index }
+                    .padding(horizontal = 16.dp, vertical = 12.dp),
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
                 CustomText(
                     text = day.number.toString(),
-                    fontSize = 12.sp,
+                    fontSize = 14.sp,
                     color = if (isSelected) Color.White else Blue
                 )
                 CustomText(
