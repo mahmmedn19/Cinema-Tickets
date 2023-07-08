@@ -5,8 +5,11 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxHeight
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.getValue
@@ -27,17 +30,22 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             CinemaTicketsTheme {
-                val navController = rememberNavController()
-                val bottomBarState = checkBottomBarState(navController)
-                Scaffold(
-                    Modifier.fillMaxHeight(),
-                    bottomBar = {
-                        BottomNavigationBar(navController, bottomBarState)
-                    }
-                )
-                { innerPadding ->
-                    Box(modifier = Modifier.padding(innerPadding)) {
-                        AppNavGraph(navController)
+                Surface(
+                    modifier = Modifier.fillMaxSize(),
+                    color = MaterialTheme.colorScheme.background
+                ) {
+                    val navController = rememberNavController()
+                    val bottomBarState = checkBottomBarState(navController)
+                    Scaffold(
+                        Modifier.fillMaxHeight(),
+                        bottomBar = {
+                            BottomNavigationBar(navController, bottomBarState)
+                        }
+                    )
+                    { innerPadding ->
+                        Box(modifier = Modifier.padding(innerPadding)) {
+                            AppNavGraph(navController)
+                        }
                     }
                 }
             }

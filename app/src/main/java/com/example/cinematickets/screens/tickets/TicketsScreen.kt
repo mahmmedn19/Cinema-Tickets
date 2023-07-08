@@ -10,12 +10,14 @@
 package com.example.cinematickets.screens.tickets
 
 
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
@@ -25,6 +27,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -43,7 +46,7 @@ import com.example.cinematickets.composable.VerticalSpacer
 import com.example.cinematickets.ui.theme.White70
 
 @Composable
-fun TicketsScreen(navController: NavHostController, ) {
+fun TicketsScreen(navController: NavHostController) {
     ConstraintLayout(
         modifier = Modifier
             .fillMaxSize()
@@ -53,6 +56,14 @@ fun TicketsScreen(navController: NavHostController, ) {
         val cardContainer = createRef()
         val guideline = createGuidelineFromTop(450.dp)
 
+        Image(
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(200.dp),
+            painter = painterResource(id = R.drawable.cinema),
+            contentDescription = null,
+
+        )
         MyCard(
             modifier = Modifier
                 .padding(top = 16.dp, start = 16.dp),
@@ -120,6 +131,7 @@ fun TicketsScreen(navController: NavHostController, ) {
             VerticalSpacer(height = 16.dp)
             ListOfDaysOfWeek()
             ListOfTimes()
+            VerticalSpacer(height = 16.dp)
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
