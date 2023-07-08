@@ -54,7 +54,8 @@ fun MyListRounded(dataList: List<String>) {
             ResizableImage(
                 painter = rememberAsyncImagePainter(imageUrl),
                 modifier = Modifier
-                    .clip(RoundedCornerShape(100.dp))
+                    .clip(RoundedCornerShape(100.dp)),
+                size = 70
             )
         }
     }
