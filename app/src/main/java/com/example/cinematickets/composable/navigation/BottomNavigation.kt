@@ -9,7 +9,9 @@
 
 package com.example.cinematickets.composable.navigation
 
+import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.material.BottomNavigation
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.NavigationBarItemDefaults
 import androidx.compose.runtime.Composable
@@ -31,41 +33,45 @@ fun BottomNavigationBar(navController: NavHostController, bottomBarState: Mutabl
         BottomNavScreen.Tickets,
         BottomNavScreen.Profile
     )
+    AnimatedVisibility(
+        visible = bottomBarState.value,
+        content = {
+            BottomNavigation(
+                backgroundColor = MaterialTheme.colorScheme.background
+            ) {
+                val navBackStackEntry by navController.currentBackStackEntryAsState()
+                val currentDestination = navBackStackEntry?.destination
 
-    BottomNavigation(
-        backgroundColor = White
-    ) {
-        val navBackStackEntry by navController.currentBackStackEntryAsState()
-        val currentDestination = navBackStackEntry?.destination
+                items.forEach { screen ->
+                    val isSelected = currentDestination?.route == screen.route
+                    val iconTint = if (isSelected) White else Color.Black
 
-        items.forEach { screen ->
-            val isSelected = currentDestination?.route == screen.route
-            val iconTint = if (isSelected) White else Color.Black
-
-            NavigationBarItem(
-                icon = {
-                    CustomIcon(
-                        drawableResId = screen.icon,
-                        tint = iconTint
-                    )
-                },
-                selected = isSelected,
-                colors = NavigationBarItemDefaults.colors(
-                    indicatorColor = Orange,
-                    selectedIconColor = White
-                ),
-                onClick = {
-                    navController.navigate(screen.route) {
-                        navController.graph.startDestinationRoute?.let { route ->
-                            popUpTo(route) {
-                                saveState = true
+                    NavigationBarItem(
+                        icon = {
+                            CustomIcon(
+                                drawableResId = screen.icon,
+                                tint = iconTint
+                            )
+                        },
+                        selected = isSelected,
+                        colors = NavigationBarItemDefaults.colors(
+                            indicatorColor = Orange,
+                            selectedIconColor = White
+                        ),
+                        onClick = {
+                            navController.navigate(screen.route) {
+                                navController.graph.startDestinationRoute?.let { route ->
+                                    popUpTo(route) {
+                                        saveState = true
+                                    }
+                                }
+                                launchSingleTop = true
+                                restoreState = true
                             }
                         }
-                        launchSingleTop = true
-                        restoreState = true
-                    }
+                    )
                 }
-            )
+            }
         }
-    }
+    )
 }

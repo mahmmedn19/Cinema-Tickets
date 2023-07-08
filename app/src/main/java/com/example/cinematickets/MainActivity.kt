@@ -13,7 +13,6 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
@@ -21,7 +20,6 @@ import androidx.navigation.compose.rememberNavController
 import com.example.cinematickets.composable.navigation.AppNavGraph
 import com.example.cinematickets.composable.navigation.BottomNavScreen
 import com.example.cinematickets.composable.navigation.BottomNavigationBar
-import com.example.cinematickets.screens.home.HomeScreen
 import com.example.cinematickets.ui.theme.CinemaTicketsTheme
 
 class MainActivity : ComponentActivity() {
