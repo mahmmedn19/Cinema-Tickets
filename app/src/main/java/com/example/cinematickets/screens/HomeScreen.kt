@@ -25,6 +25,8 @@ import androidx.compose.foundation.pager.HorizontalPager
 import androidx.compose.foundation.pager.rememberPagerState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Scaffold
+import androidx.compose.material.*
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.MutableState
@@ -44,8 +46,11 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.util.lerp
+import androidx.navigation.compose.rememberNavController
 import com.example.cinematickets.R
-import com.example.cinematickets.Utils
+import com.example.cinematickets.utils.Utils
+import com.example.cinematickets.composable.AppNavigation
+import com.example.cinematickets.composable.BottomNavigationBar
 import com.example.cinematickets.composable.CustomIcon
 import com.example.cinematickets.composable.CustomText
 import com.example.cinematickets.composable.HorizontalSpacer
@@ -66,6 +71,7 @@ fun HomeScreen() {
     val randomImageUrls = Utils.generateRandomImageUrls(10)
     val selectedChipIndex = remember { mutableStateOf(0) }
     val pagerState = rememberPagerState(images.size)
+   // val navController = rememberNavController()
     BackgroundImageBlur(images, pagerState.currentPage)
 
     Column(
@@ -85,7 +91,7 @@ fun HomeScreen() {
         ) { page ->
             Box(
                 modifier = Modifier
-                    .aspectRatio(4.4f / 5.5f)
+                    .aspectRatio(4.6f / 5.2f)
                     .graphicsLayer {
                         val pageOffset =
                             ((pagerState.currentPage - page) + pagerState.currentPageOffsetFraction).absoluteValue
@@ -108,8 +114,14 @@ fun HomeScreen() {
         }
 
         MovieDetails()
-
         SuggestTag()
+/*        Scaffold(
+            containerColor = Color.White,
+            contentColor = Color.White,
+            bottomBar = { BottomNavigationBar(navController) },
+        ) {
+            AppNavigation(navController)
+        }*/
     }
 }
 
