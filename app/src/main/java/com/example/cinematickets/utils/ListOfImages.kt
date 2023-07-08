@@ -14,7 +14,7 @@ object ListOfImages{
     fun listOfImages():List<String>{
         return listOf(
             "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSacIchFSO2VC_AglxIliw1Mxo4UYFOMVk-wqy9fwvLDAPFfKVB",
-            "https://images.savoysystems.co.uk/PCH/9640676.jpg",
+            "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTfVmUE9T5a10i05V5tDJISK-DjEvB36QynjxWRloQrrWcTM1FJ",
             "https://i.pinimg.com/originals/02/87/61/02876144fce74bd2a5f434c60f031989.jpg",
             "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSacIchFSO2VC_AglxIliw1Mxo4UYFOMVk-wqy9fwvLDAPFfKVB",
             "https://www.boredpanda.com/blog/wp-content/uploads/2022/05/best-thriller-movies-53-628c95ea5bf80__700.jpg",

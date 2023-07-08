@@ -19,6 +19,7 @@ import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Color.Companion.White
+import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import com.example.cinematickets.composable.CustomIcon
@@ -37,7 +38,8 @@ fun BottomNavigationBar(navController: NavHostController, bottomBarState: Mutabl
         visible = bottomBarState.value,
         content = {
             BottomNavigation(
-                backgroundColor = MaterialTheme.colorScheme.background
+                backgroundColor = MaterialTheme.colorScheme.background,
+                elevation = 1.dp
             ) {
                 val navBackStackEntry by navController.currentBackStackEntryAsState()
                 val currentDestination = navBackStackEntry?.destination
