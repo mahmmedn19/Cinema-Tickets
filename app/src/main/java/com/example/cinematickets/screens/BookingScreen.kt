@@ -34,7 +34,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.constraintlayout.compose.ConstraintLayout
 import com.example.cinematickets.R
-import com.example.cinematickets.Utils.generateRandomImageUrls
+import com.example.cinematickets.utils.Utils.generateRandomImageUrls
 import com.example.cinematickets.composable.CustomIcon
 import com.example.cinematickets.composable.CustomText
 import com.example.cinematickets.composable.HorizontalSpacer
@@ -132,11 +132,9 @@ fun BookingScreen() {
                         .padding(horizontal = 64.dp),
                     fontSize = 20.sp,
                 )
-                VerticalSpacer(height = 32.dp)
+                VerticalSpacer(height = 16.dp)
                 SuggestTag()
-                VerticalSpacer(height = 16.dp)
                 MyListRounded(generateRandomImageUrls(15))
-                VerticalSpacer(height = 16.dp)
                 CustomText(
                     text = stringResource(R.string.movie_description),
                     modifier = Modifier
@@ -144,7 +142,7 @@ fun BookingScreen() {
                         .padding(horizontal = 32.dp),
                     fontSize = 18.sp,
                 )
-                VerticalSpacer(height = 32.dp)
+                VerticalSpacer(height = 16.dp)
                 IconButton(
                     onClick = { /* Handle button click */ },
                     drawableResId = R.drawable.ic_booking,

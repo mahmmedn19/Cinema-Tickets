@@ -9,12 +9,9 @@
 
 package com.example.cinematickets.composable
 
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontFamily
@@ -62,14 +59,4 @@ fun IMDbText(imdbText: String) {
         fontWeight = FontWeight.Normal,
         color = Color.Gray
     )
-}
-
-@Composable
-fun RatingIMDb() {
-    Column {
-        Row(verticalAlignment = Alignment.CenterVertically) {
-            RatingText("6.8/10")
-            IMDbText("IMDb")
-        }
-    }
 }

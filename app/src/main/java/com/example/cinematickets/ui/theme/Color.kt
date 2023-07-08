@@ -12,5 +12,6 @@ val Pink40 = Color(0xFF7D5260)
 
 val Orange = Color(0xFFFF5524)
 val TakenColor = Color(0xFF404040)
-val Brown = Color(0xFF918A7E)
+val Brown = Color(0xFF918981)
 val White70 = Color(0xB3BBBBBB)
+val Blue = Color(0xFF122357)
