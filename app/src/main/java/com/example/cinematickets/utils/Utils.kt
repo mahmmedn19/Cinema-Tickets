@@ -1,13 +1,13 @@
 /*
- * Created by Mohamed Naser on 7/6/23, 4:53 PM, 2023.
+ * Created by Mohamed Naser on 7/8/23, 9:17 AM, 2023.
  *
  * Copyright (c) 2023 All rights reserved.
  *
- * Last modified: 7/6/23, 4:53 PM
+ * Last modified: 7/6/23, 7:38 PM
  *
  */
 
-package com.example.cinematickets
+package com.example.cinematickets.utils
 
 import kotlin.random.Random
 

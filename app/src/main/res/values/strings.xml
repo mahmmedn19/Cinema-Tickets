@@ -8,4 +8,8 @@
     <string name="ign">IGN</string>
     <string name="movie_details">"Fantastic Fantastic : the  movies Fantastic Fantastic Fantastic "</string>
     <string name="movie_description">"Fantastic Fantastic : the  animation movies Fantastic Fantastic "</string>
+    <string name="available">Available</string>
+    <string name="taken">Taken</string>
+    <string name="selected">Selected</string>
+    <string name="buy_tickets">Buy tickets</string>
 </resources>
